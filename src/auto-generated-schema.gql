@@ -1,0 +1,57 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input CreateDepartmentDto {
+  employees: [String!]!
+  id: String!
+  name: String
+}
+
+input CreateEmployeeDto {
+  firstName: String!
+  id: String!
+  lastName: String!
+  title: String!
+}
+
+type Department {
+  employees: [Employee!]
+  id: String!
+  name: String!
+}
+
+type Employee {
+  firstName: String!
+  id: String!
+  lastName: String!
+  title: String!
+}
+
+type Mutation {
+  createDepartment(departmentInput: CreateDepartmentDto!): Department!
+  createEmployee(employeeInput: CreateEmployeeDto!): Employee!
+  deleteDepartment(id: String!): Department!
+  deleteEmployee(id: String!): Employee!
+  updateDepartment(departmentInput: UpdateDepartmentDto!): Department!
+  updateEmployee(employeeInput: UpdateEmployeeDto!): Employee!
+}
+
+type Query {
+  getAllDepartments: [Department!]!
+  getAllEmployees: [Employee!]!
+  getDepartment(id: String!): Department
+  getEmployee(id: String!): Employee
+}
+
+input UpdateDepartmentDto {
+  id: String!
+  name: String
+}
+
+input UpdateEmployeeDto {
+  firstName: String
+  id: String!
+  lastName: String
+  title: String
+}
